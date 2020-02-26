@@ -1,0 +1,26 @@
+{% extends 'sayfalar/layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sayfalar/css/article.css' %}">
+<link rel="stylesheet" href="{% static 'sayfalar/css/button_press_effect.css' %}">
+{% endblock css %}
+
+{% block body %}
+<article class="media content-section content" style="height:60vh">
+    <img class="rounded-circle article-img" src="{{object.author.profile.image.url}}" alt="{{profile}}" srcset="">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+            <small class="text-muted">{{ object.date_posted}}</small>
+            <p class="article-content">{{ object.content }}</p>
+            {% if object.author == user %}
+            <div>
+            <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Güncelle</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Sil</a>
+            <a class="btn btn-success btn-sm mt-1 mb-1" href="{% url 'posts' %}">Devam</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
+{% endblock body %}

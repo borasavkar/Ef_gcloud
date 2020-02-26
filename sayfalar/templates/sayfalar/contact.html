@@ -1,0 +1,60 @@
+{% extends "sayfalar/layout.html" %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sayfalar/css/yorumlarSlide.css' %}">
+<link rel="stylesheet" href="{% static 'sayfalar/css/button_press_effect.css' %}">
+{% endblock css %}
+{% block modalKredi %}
+{% include "sayfalar/includes/modal.html" %}
+{% endblock modalKredi %}
+{% block body %}
+<div style="background-color: #e8491d;height: 50px;color: white">
+    <div  class="txt_center" style="line-height: 50px"><a onclick="return gtag_report_conversion('tel:05397436920');" href="tel:05397436920" style="color:white;font-style:italic ">0539 743 69 20</a>
+    </div>
+</div>
+<img class="width100" style="height: 100vh" src="{% static 'sayfalar/img/Rahat_EmekliFinans.jpg' %}" alt="emekli finans">
+<div class="centeredTop marginTop100px">
+    <form method="POST">{% csrf_token %}
+        <fieldset class="txt_center font-weight-bold shadow-white1px" style="color:#e8491d">
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0" >
+                    {{ contact_form.ad|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-6 mb-0" >
+                    {{ contact_form.soyad|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6 mb-0" >
+                    {{ contact_form.tel|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-6 mb-0" >
+                    {{ contact_form.email|as_crispy_field }}
+                </div>
+            </div>
+                {{ contact_form.mesaj|as_crispy_field }}
+            <div class="container">
+                <button class="button_press_effect" type="submit">Gönder
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock body %}
+
+{% block krediBasvur %}
+{% include "sayfalar/includes/floatingBtns/krediBasvur.html" %}
+{% endblock krediBasvur %}
+
+{% block home_btn %}
+{% include "sayfalar/includes/floatingBtns/home_btn.html" %}      
+{% endblock home_btn %}
+
+
+
+
+
+
+

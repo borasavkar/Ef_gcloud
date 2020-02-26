@@ -1,0 +1,43 @@
+{% extends "sayfalar/layout.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'sayfalar/css/yorumlarSlide.css' %}">
+<link rel="stylesheet" href="{% static 'sayfalar/css/ZoomIn.min.css' %}">
+<link rel="stylesheet" href="{% static 'sayfalar/css/emekliyekredi.css' %}">   
+{% endblock css %}
+
+{% block modalKredi %}
+{% include "sayfalar/includes/modal.html" %}
+{% endblock modalKredi %}
+
+{% block box1 %}
+{% include "sayfalar/includes/SicilBozukBoxes/box1-image.html" %}
+{% include "sayfalar/includes/SicilBozukBoxes/box1-desc.html" %}
+{% endblock box1 %}
+
+{% block box2 %}
+{% include "sayfalar/includes/SicilBozukBoxes/box2-desc.html" %}
+{% endblock box2 %}
+
+{% block box3 %}
+{% include "sayfalar/includes/SicilBozukBoxes/box3-desc.html" %}
+{% endblock box3 %}
+
+{% block box4 %}
+{% include "sayfalar/includes/SicilBozukBoxes/box4-desc.html" %}
+{% endblock box4 %}
+
+{% block box5 %}
+{% include "sayfalar/includes/HomePageBoxes/box5.html" %}
+{% endblock box5 %}
+
+{% block comments %}
+{% include "sayfalar/includes/comments.html" %}  
+{% endblock comments %}
+
+{% block krediBasvur %}
+{% include "sayfalar/includes/floatingBtns/krediBasvur.html" %}
+{% endblock krediBasvur %}
+
+

@@ -1,0 +1,440 @@
+/*form*/
+
+
+/*form header*/
+
+.form_header {
+    font-size: 2em;
+    text-align: center
+}
+
+.form_header2 {
+    color: #e8491d;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+
+/*form header*/
+
+.checkbox {
+    font-size: 20px;
+    margin: 5px auto
+}
+
+.checkbox_icra {
+    font-size: 20px;
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    margin: 5px 0px;
+    border: 2px solid;
+}
+
+#regForm {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: Raleway;
+    padding: 40px;
+    width: 100%;
+    min-width: 300px;
+    height: auto;
+    clear: both;
+}
+
+.form_label,
+.form_Input,
+.checkbox,
+.checkbox_Buttons,
+.evet,
+.hayir,
+.evetHayir,
+.money,
+.autocomplete {
+    text-align: center
+}
+
+.autocomplete {
+    width: 100%;
+    margin: 5px auto;
+    clear: both
+}
+
+.tab .form_label {
+    margin-top: 15px
+}
+
+.tab,
+.city,
+#city,
+.Kredi_talebi,
+#Kredi_Talebi {
+    text-align: center;
+}
+
+
+/* Tcno Alert*/
+
+#uyari,
+#uyariAd,
+#uyariTel {
+    color: #e8491d;
+    text-align: center
+}
+
+#regForm p {
+    color: #35424a;
+    font-weight: bold;
+    clear: left
+}
+
+select,
+input {
+    padding: 10px;
+    width: 80%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 2px solid #aaaaaa;
+    margin: 5px auto;
+    border-style: solid;
+    -webkit-box-shadow: 5px 5px 5px 1px gray;
+    -moz-box-shadow: 5px 5px 5px 1px gray;
+    -ms-box-shadow: 5px 5px 5px 1px gray;
+    -o-box-shadow: 5px 5px 5px 1px gray;
+    box-shadow: 5px 5px 5px 1px gray;
+    text-align: center
+}
+
+#kredi,
+#krediTutari {
+    display: none
+}
+
+#city,
+.city {
+    background: #fff;
+    text-align: center;
+    text-align-last: center
+}
+
+
+/*evet hayır*/
+
+.evet {
+    border: 2px solid green
+}
+
+.hayir {
+    border: 2px solid #ff0000
+}
+
+.evet,
+.hayir {
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #000;
+    background-color: #fff;
+    width: 30%;
+    height: 40px;
+    text-transform: uppercase;
+    margin: 0 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block
+}
+
+.evet:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.evet:active {
+    background-color: #4CAF50;
+    box-shadow: 0 5px #666;
+    -webkit-transform: translate(4px);
+    -moz-transform: translate(4px);
+    -o-transform: translate(4px);
+    -ms-transform: translate(4px);
+    transform: translate(4px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.hayir:hover {
+    background-color: #ff0000;
+    color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.hayir:active {
+    background-color: #ff0000;
+    box-shadow: 0 5px #666;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-transform: translate(4px);
+    -moz-transform: translate(4px);
+    -ms-transform: translate(4px);
+    -o-transform: translate(4px);
+    transform: translate(4px);
+}
+
+.evetHayir {
+    padding: 10px
+}
+
+
+/*End Of evethayır*/
+
+
+/* Mark input boxes that gets an error on validation: */
+
+input.invalid {
+    background-color: #ffdddd;
+}
+
+
+/* Hide all steps by default: */
+
+.tab {
+    display: none
+}
+
+.tab input {
+    border-radius: 5px
+}
+
+button {
+    background-color: #4CAF50;
+    border: 2px solid #000;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+    margin-top: 15px
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#prevBtn {
+    background-color: red;
+	float: left;
+}
+#nextBtn {float: right}
+/* Make circles that indicate the steps of the form: */
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+
+/* Mark the steps that are finished and valid: */
+
+.step.finish {
+    background-color: #4CAF50;
+}
+
+
+/* Checkbox Style */
+
+.kanun a {
+    color: black;
+    text-align: center
+}
+
+.kanun {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.kanun input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.kanun_checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee
+}
+
+.kanun:hover input~.kanun_checkbox {
+    background-color: #ccc
+}
+
+.kanun input:checked~.kanun_checkbox {
+    background-color: #2196F3
+}
+
+.kanun_checkbox:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+.kanun input:checked~.kanun_checkbox:after {
+    display: block
+}
+
+.kanun .kanun_checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+  .autocomplete {
+                    /*the container must be positioned relative:*/
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                .autocomplete-items {
+                    position: absolute;
+                    border: 1px solid #d4d4d4;
+                    border-bottom: none;
+                    border-top: none;
+                    z-index: 99;
+                    /*position the autocomplete items to be the same width as the container:*/
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                }
+                
+                .autocomplete-items div {
+                    padding: 10px;
+                    cursor: pointer;
+                    background-color: #fff;
+                    border-bottom: 1px solid #d4d4d4
+                }
+                
+                .autocomplete-items div:hover {
+                    /*when hovering an item:*/
+                    background-color: #e9e9e9;
+                }
+                
+                .autocomplete-active {
+                    /*when navigating through the items using the arrow keys:*/
+                    background-color: DodgerBlue !important;
+                    color: #ffffff;
+                }
+				 .tel-floating {
+            font-size: 2vh;
+            position: fixed;
+            right: 0;
+            top: 0
+        }
+        
+        .tel-floating img {
+            line-height: 50px;
+            padding: 7px
+        }
+		 .home_link {
+            position: fixed;
+            float: right;
+            overflow: visible;
+            z-index: 10000;
+            bottom: 0;
+        }
+        
+        .home_link a {
+            font-size: 50px
+			}
+			   #whatsapp {
+            position: fixed;
+            float: right;
+            right: 0;
+            overflow: visible;
+            z-index: 10000;
+            bottom: 0;
+            align-content: center;
+        }
+        
+        #whatsapp a {
+            font-size: 50px
+        }
+
+/* On smaller screens, decrease text size */
+
+@media(max-width:768px) {
+    /*form design*/
+    #regForm {
+        font-size: 15px
+    }
+    .checkbox {
+        text-align: center
+    }
+    #prevBtn,
+    #nextBtn {
+        text-align: center
+    }
+    #regForm {
+        margin-top: 30px
+    }
+    .checkbox {
+        margin: 2px auto
+    }
+    .checkbox_Buttons {
+        margin: 1px 0px
+    }
+    .evet,
+    .hayir {
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px;
+    }
+}

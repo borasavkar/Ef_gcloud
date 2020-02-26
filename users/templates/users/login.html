@@ -1,0 +1,54 @@
+{% extends 'sayfalar/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sayfalar/css/button_press_effect.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="max1920px" style="height:100vh">
+    <div class="subnav bold" style="background-color: #e8491d;height: 50px;color: white">
+        <div class="txt_center" style="line-height: 50px">Oturum Açın</div>
+    </div>
+    <img class="width100 pb-5" style="height:inherit" src="{% static 'sayfalar/img/Rahat_EmekliFinans.jpg' %}" alt="emekli finans">
+    <div class="centeredTop marginTop100px">
+        <form method="POST" class="max1920px">{% csrf_token %}
+            <fieldset class="txt_center">
+                <div class="form-group">
+                {{ form|crispy }}
+                </div>
+                <div class="container">
+                    <button class="button_press_effect" type="submit">
+                    Giriş Yap
+                    </button>
+                </div>
+                <div class="container">
+                    <div class="row justify-content mt-1">
+                        <div class="">
+                            <a class="button_press_effect_blue" style="color:#fff" role="button" href="{% provider_login_url "facebook" method="oauth2" %}"><img src="{% static 'sayfalar/img/facebook_bgWhite.svg' %}" style="height:20px" class="mr-1 mb-1 ml-0"><span 1style="line-height:20px"> İle Giriş Yapın</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container p-5">
+                <small class="text-muted container" > 
+                    <a class="button_press_effect" href="{% url 'password-reset' %}">Şifrenizi Mi Unuttunuz?</a>
+                </small>
+                </div>
+                <div class="text-muted p-5">
+                    <a class="bold " style="color:white" href="{% url 'register' %}">
+                        <div >Hesabınız Yok Mu?</div>
+                        <div class="button_press_effect_blue">Hemen Kayıt Ol</div>
+                    </a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock body %}
+
+{% block home_btn %}
+    {% include "sayfalar/includes/floatingBtns/home_btn.html" %}     
+{% endblock home_btn %}
+

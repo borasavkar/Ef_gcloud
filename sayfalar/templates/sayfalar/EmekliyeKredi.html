@@ -1,0 +1,48 @@
+{% extends "sayfalar/layout.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'sayfalar/css/yorumlarSlide.css' %}">
+<link rel="stylesheet" href="{% static 'sayfalar/css/emekliyekredi.css' %}">   
+{% endblock css %}
+
+{% block modalKredi %}
+{% include "sayfalar/includes/modal.html" %}
+{% endblock modalKredi %}
+{% block body %}
+{% endblock body %}
+
+{% block box1 %}
+    {% include "sayfalar/includes/emekliyeKrediBoxes/box1-image.html" %}
+{% endblock box1 %}
+
+{% block box2 %}
+    {% include "sayfalar/includes/emekliyeKrediBoxes/desc1.html" %}
+{% endblock box2 %}
+
+{% block box3%}
+    {% include "sayfalar/includes/emekliyeKrediBoxes/desc2.html" %}
+{% endblock box3 %}
+
+{% block box4 %}
+    {% include "sayfalar/includes/emekliyeKrediBoxes/desc3.html" %}
+{% endblock box4 %}
+
+{% block box5 %}
+    {% include "sayfalar/includes/emekliyeKrediBoxes/desc4.html" %}
+{% endblock box5 %}
+
+{% block box6 %}
+    {% include "sayfalar/includes/emekliyeKrediBoxes/desc5.html" %}
+{% endblock box6 %}
+
+{% block comments %}
+    {% include "sayfalar/includes/comments.html" %}      
+{% endblock comments %}
+{% block krediBasvur %}
+{% include "sayfalar/includes/floatingBtns/krediBasvur.html" %}
+{% endblock krediBasvur %}
+
+{% block home_btn %}
+{% include "sayfalar/includes/floatingBtns/home_btn.html" %}      
+{% endblock home_btn %}

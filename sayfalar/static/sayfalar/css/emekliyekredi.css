@@ -1,0 +1,18 @@
+.definition {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    font-size: 30px
+}
+.definition h2 {
+    color: #e8491d;
+    padding: 10px 0;
+    font-size: 35px;
+}
+.definition h3 {
+    padding: 10px 0;
+    font-size: 25px
+}
+.definition p {
+    font-size: 20px
+}

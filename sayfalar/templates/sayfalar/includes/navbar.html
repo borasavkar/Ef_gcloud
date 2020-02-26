@@ -1,0 +1,90 @@
+{% load static %}
+<style>
+.nav-item:hover{
+    background:#e8491d
+}
+.dropdown-menu{
+    background:black;
+    border:solid 2px #e8491d !important;
+    border-radius:5px !important;
+}
+.dropdown-menu a{
+    color:white
+}
+.dropdown-menu a:hover{
+    background:#e8491d;
+    font-weight: bold;
+}
+@media (max-width: 600px) {
+    .hide_responsive{
+        display: none;
+    }
+    .borderNone_responsive{
+        border: none !important;
+    }
+}
+</style>
+<link rel="stylesheet" href="{% static 'sayfalar/css/article.css' %}">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:#000000">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+        <img src="{% static 'sayfalar/img/Ef_Logo.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="EmekliFinans Logo">
+        <span class="hide_responsive"><span class="orange font-italic">Emekli</span>Finans<span class="sup">&reg;</span></span>
+    </a>
+    <!--User Button DropDown-->
+    {% if user.is_authenticated %}
+    <a class="mt-1 mr-2 border rounded float-right borderNone_responsive" href="#" style="right:0;top:0;position:fixed;color:white;max-height:50px;border-color:white" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" >
+        <img  class="m-1 rounded-pill" style="max-height:40px; " src="{{user.profile.image.url}}" alt="{{profile}}"><span class="hide_responsive mr-1">{{user}}</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right " aria-labelledby="userDropdown" id="UserDropdown">
+        <a class="dropdown-item " href="{% url 'profile' %}">Profilim</a>
+        <a class="dropdown-item " href="{% url 'basvuru' %}">Kredi Başvurusu</a>
+        <a class="dropdown-item " href="{% url 'post-create' %}">Yorum Yap</a>
+        <a class="dropdown-item " href="{% url 'logout' %}">Çıkış Yap</a>
+    </div>
+    {% else %}
+    <a class="mt-1 mr-2 border rounded float-right" href="#" style="right:0;top:0;position:fixed;color:white;max-height:50px;border-color:white" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" >
+        <div style="display:inline-block">
+            <img id="user_Icon" class="m-1" style="max-height:40px; " src="{% static 'sayfalar/img/user-white.svg' %}" alt="User_Emeklifinans">
+            <ul class="mr-2 text-center hide_responsive" style="float:right;list-style:none">
+                <li>Giriş Yap</li>
+                <li>Kayıt Ol</li>
+            </ul>
+        </div>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right " aria-labelledby="userDropdown" id="UserDropdown">
+        <a class="dropdown-item " href="{% url 'login' %}">Giriş Yap</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'register' %}">Kayıt Ol</a>
+    </div>
+    {% endif %}
+    <!--navLinks-->
+    <div class="collapse navbar-collapse " id="navbarSupportedContent"  >
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active  ">
+                <a class="nav-link " href="{% url 'about' %}">Biz Kimiz<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'contact' %}">Bize Ulaşın</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hizmetlerimiz</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'EmekliyeKredi' %}">Emekliye Kredi</a>
+                    <a class="dropdown-item" href="{% url 'ptt_kredi' %}">Ptt Kredi</a>
+                    <a class="dropdown-item" href="{% url 'SicilBozuk' %}">Sicili Bozuk</a>
+                    <div class="dropdown-divider"></div>
+                    <a onclick="return gtag_report_conversion('tel:05397436920');" class="dropdown-item" href="tel:05397436920">0539 743 69 20</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'basvuru' %}">Kredi Başvurusu<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'posts' %}">Yorumlarınız<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>

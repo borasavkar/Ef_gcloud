@@ -1,0 +1,91 @@
+{% extends "sayfalar/layout.html" %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'sayfalar/css/button_press_effect.css' %}">
+{% endblock css %}
+{% block body %}
+<div class="txt_center mt-3 max1920px" style="height: 100vh">
+    <form method="POST">{% csrf_token %}
+        <fieldset class="form-group txt-center">
+            <legend class="text-center mb-0">Kredi Başvuru Formu</legend>
+            <small class="" style="color:#e8491d;font-size:0.8rem">Emeklilere; Kredi Puansız, Sicil Puansız, Ön Ödemesiz Garantili Kredi</small><br>
+            <a style="font-size:0.7rem" href="{% static 'sayfalar/Docs/KisiselVerilerinKorunmasi.pdf' %}" target="_blank"><span class="orange font-italic">Emekli</span><span style="color:black">Finans</span><span class="sup">&reg;</span> KVK Kanununa Tam Olarak Uyarak Bilgilerinizi Asla Paylaşmaz. Detaylı Bilgi İçin Tıklayınız.</a>
+            <hr>
+            <div id="emekli_misiniz">
+                <div class="mx-auto" style="width:100%">
+                    <p class="display-4">Emekli Misiniz?</p>
+                </div>
+                <div class="container">
+                    <div class="form-row justify-content-around ">
+                        <div class="form-group col-4">
+                            <button class="button_press_effect_green btn-lg" type="button" onclick="showForm1()">
+                                Evet
+                            </button>
+                        </div>
+                        <div class="form-group col-4">
+                            <button class="button_press_effect_red btn-lg" type="button" onclick="emeklidegilim()">
+                                Hayır
+                            </button>
+                        </div>
+                    </div>
+                    <div id="emeklidegilimuyari" class="txt_center" style="color: #ff0000;margin-top:2vh;display:none">
+                    <span class="highlight">Emekli</span><span class="italic black">Finans<span class="sup">&reg;</span></span> sadece emekli, dul, yetim, gazilere hizmet vermektedir. Devam etmek için lütfen "Evet" seçiniz.
+                    </div>
+                </div>
+            </div>
+            <div id="form1" style="display:none">
+                <div class="form-row mx-auto">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ kredi_form.ad|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 mb-0" >
+                        {{ kredi_form.soyad|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ kredi_form.tc|as_crispy_field }}
+                        <div id="tc_uyari" style="color:#ff0000"></div>
+                    </div>
+                    <div class="form-group col-md-6 mb-0" >
+                        {{ kredi_form.tel|as_crispy_field }}
+                        <div id="telUyari" style="color:#ff0000"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="form2" style="display:none">
+                <div class="form-row mx-auto">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ kredi_form.maas_banka|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{ kredi_form.kredi_tutari|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+            <div id="form3" style="display:none">
+                <div class="form-row mx-auto">
+                    <div class="form-group col-md-6 mb-0">
+                        {{ kredi_form.kredi_talebi|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        {{ kredi_form.city|as_crispy_field }}
+                    </div>
+                </div>
+            {{ kredi_form.kvk_confirm|as_crispy_field }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="button_press_effect mx-auto mb-5" type="submit" style="display:none" id="krediForm_gonder">
+                Başvur
+            </button>
+        </div>
+    </form>
+</div>
+<script src="{% static 'sayfalar/js/basvuru.js' %}"></script>
+<script src="{% static 'sayfalar/js/tcnoValidate.js' %}"></script>
+<script src="{% static 'sayfalar/js/telValidate.js' %}"></script>
+{% endblock body %}
+

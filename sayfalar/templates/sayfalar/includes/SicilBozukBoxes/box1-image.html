@@ -1,0 +1,36 @@
+{% load static %}
+<style>
+#header_responsive{
+font-size:5rem;
+}
+@media (max-width: 600px) {
+#header_responsive{
+    font-size: 4rem;
+  }
+}
+@media (max-width: 485px) {
+#header_responsive{
+    font-size: 3rem;
+  }
+}
+@media (max-width: 385px) {
+#header_responsive{
+    font-size: 2.5rem;
+  }
+}
+</style>
+<div class="max1920px shadow-google box">
+  <div class="box">
+    <div class="containerEF">
+      <picture>
+        <source srcset="{% static 'sayfalar/img/Rahat_EmekliFinans.webp' %}" type="image/webp">
+        <source srcset="{% static 'sayfalar/img/Rahat_EmekliFinans.jpg' %}" type="image/jpeg">
+        <img class="width100"  alt="Emekli Finans">
+      </picture>
+      <div class="sliderTop">
+          <div class="centeredTop italic bold white shadow-black"><h1 id="header_responsive">Sicili Bozuk Emekliye Kredi</h1>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
